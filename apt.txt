@@ -1,0 +1,6 @@
+octave
+octave-image
+octave-io
+octave-statistics
+gnuplot
+ghostscript

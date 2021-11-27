@@ -35,7 +35,7 @@ updateQandd
 % [my_t, my_N] = feval(str2func(MY_SETTINGS.Solvname), str2func(MY_SETTINGS.modelname),...
 %     tspan, N, MY_SETTINGS.SolvOpt);
  [my_t, my_N] = feval(MY_SETTINGS.Solver, MY_SETTINGS.model,...
-     tspan, N, MY_SETTINGS.SolvOpt);
+     tspan, N(:), MY_SETTINGS.SolvOpt);
 % set final N as new N
 if is_store_output
     store

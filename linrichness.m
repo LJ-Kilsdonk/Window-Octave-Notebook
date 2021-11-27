@@ -43,8 +43,9 @@ for modeli=1:n_models
     stdLR  = squeeze(std(linRichA,1)); % standard deviation lineage richness (i_E, i_imm_freq).
     
     for i_E= 1:length(listE)
-        errorbar(imm_freq{i_E}, meanLR(i_E,:), stdLR(i_E,:), ...
-            'LineStyle',Lstyle{i_E},'Color',colorsforplot{i_E},'LineWidth',L_W);      
+        errorbar(imm_freq{i_E}, meanLR(i_E,:), stdLR(i_E,:));
+%         errorbar(imm_freq{i_E}, meanLR(i_E,:), stdLR(i_E,:), ...
+%             'LineStyle',Lstyle{i_E},'Color',colorsforplot{i_E},'LineWidth',L_W);      
         hold on
         xlabel('immigration frequency')
         ylabel('mean lineage richness')
