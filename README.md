@@ -1,5 +1,6 @@
 # Window of opportunity for establishment
-This is the code associated with the paper "Transient eco-evolutionary dynamics and the window of opportunity for establishment of immigrants". It was run on Matlab 2015a.  
+This is the code associated with the paper "Transient eco-evolutionary dynamics and the window of opportunity for establishment of immigrants". This version is adapted for Octave and can be run on Binder. [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/LJ-Kilsdonk/Window-Octave-Notebook/HEAD)
+ 
 
 Two files contain the command-line code to perform the simulations and generate the figures (both main text and appendix):  
 
