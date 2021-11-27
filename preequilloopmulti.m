@@ -78,6 +78,13 @@ if isredo == 1 || ~(exist(name_file,'file') == 2)
     gmeanARank_Array_nomut   =   linR_Array;
     
     tic
+    disp('paramters that will be tested in preequilloopmulti:')
+    disp('E:')
+    disp(listE)
+    disp('immigration frequency:')
+    disp(list_imm_freq)
+    disp('number of repetitions:')
+    disp(m_repl)
     % each iteration tests with and without mutations, thus at the start of
     % each iteration the original mutation rate needs to be restored.
     mutold=mut; % the original mutation rate.
@@ -86,6 +93,14 @@ if isredo == 1 || ~(exist(name_file,'file') == 2)
         E = listE(i_E);
         for i_imm_freq = 1:length(list_imm_freq)
             imm_freq = list_imm_freq(i_imm_freq);
+            
+            % display settings to monitor progress
+            disp('start testing parameter values:')
+            disp('E=')
+            disp(E)
+            disp('immigration frequency=')
+            disp(imm_freq)            
+            disp('printing repetitions:')
             for i_rep=1:m_repl
                 % restore mutation rate
                 mut = mutold;
@@ -124,8 +139,6 @@ if isredo == 1 || ~(exist(name_file,'file') == 2)
             gmeanARank_Array_nomut(:,i_E,i_imm_freq) = gmeanARank_Array_nomut(:,i_E,i_imm_freq) / m_repl;
             
             % display settings to monitor progress
-            disp(i_E)
-            disp(i_imm_freq)
             
             save(sprintf('%s',name_file))
             toc

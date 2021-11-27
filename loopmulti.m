@@ -52,10 +52,26 @@ if isredo || ~(exist(name_file,'file') == 2)
     
     % Main Loop
     tic
+
+    disp('paramters that will be tested in loopmulti:')
+    disp('E:')
+    disp(listE)
+    disp('immigration frequency:')
+    disp(list_imm_freq)
+    disp('number of repetitions:')
+    disp(m_repl)
     for i_E = 1:length(listE)
         E = listE(i_E);
         for i_imm_freq = 1:length(list_imm_freq)
             imm_freq = list_imm_freq(i_imm_freq);
+            
+            % display settings to monitor progress
+            disp('start testing parameter values:')
+            disp('E=')
+            disp(E)
+            disp('immigration frequency=')
+            disp(imm_freq)            
+            disp('printing repetitions:')
             for i_rep = 1:m_repl
                 % Store information unique to current loop (for debugging)
                 MultiM_opt.indIter = [E imm_freq i_rep];
@@ -65,13 +81,11 @@ if isredo || ~(exist(name_file,'file') == 2)
                 % display repetition to monitor progress
                 disp(i_rep);
             end
-            toc
-            % display settings to monitor progress
-            disp(i_E)
-            disp(i_imm_freq)
+            toc            
             save(sprintf('%s',name_file))
         end
     end
 else
     load(sprintf('%s',name_file))
 end
+
