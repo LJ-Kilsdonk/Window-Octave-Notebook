@@ -7,6 +7,9 @@
 global r mut n1 a E d d_min d_diff Q K h propsize   % parameters
 global MY_SETTINGS                                  % settings
 global N                                            % state variables
+% Load packages for Octave
+pkg load statistics
+
 if exist('modelname','var')
     usemodel(modelname);
     disp(['loaded model: ',MY_SETTINGS.modelname]);
